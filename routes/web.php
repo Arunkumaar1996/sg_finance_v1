@@ -2,8 +2,12 @@
 
 use App\Http\Controllers\Backend\AttendanceController;
 use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Attendance;
+use App\Models\ContactSubmission;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 $backend_controller_path ="App\Http\Controllers\Backend";
@@ -12,9 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard_new');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -54,4 +56,8 @@ Route::get('/calculator', function () {
     // return view('frontend.calculator');
     return view('frontend.lone-calculator');
 })->middleware(['auth'])->name('calculator');
+Route::get('/dashboard/refresh', [DashboardController::class, 'refresh'])->name('dashboard.refresh');
+
+
+
 require __DIR__.'/auth.php';

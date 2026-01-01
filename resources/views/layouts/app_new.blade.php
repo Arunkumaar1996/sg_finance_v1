@@ -160,7 +160,7 @@
         .company-logo {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--primary), #8b5cf6);
+            background: linear-gradient(135deg, #000c0b, #3e11a7);
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -362,9 +362,14 @@
                 </button>
                 <div class="d-flex align-items-center">
                     <div class="company-logo me-2">
-                        <i class="bi bi-people-fill"></i>
+                        {{-- <i class="bi bi-people-fill"></i> --}}
+                        <img src="{{ asset('img/assets/logo-sg.png') }}"
+     class="img-fluid"
+     style="max-height:40px;"
+     alt="SG Finance">
+
                     </div>
-                    <h5 class="mb-0 fw-bold">SG<span class="text-primary">Finance</span></h5>
+                    <h5 class="mb-0 fw-bold"><span class="text-primary">Finance</span></h5>
                 </div>
             </div>
 
@@ -437,10 +442,14 @@
             <div class="sidebar-header">
                 <div class="d-flex align-items-center">
                     <div class="company-logo me-3">
-                        <i class="bi bi-people-fill"></i>
+                        {{-- <i class="bi bi-people-fill"></i> --}}
+                        <img src="{{ asset('img/assets/logo-sg.png') }}"
+     class="img-fluid"
+     style="max-height:40px;"
+     alt="SG Finance">
                     </div>
                     <div>
-                        <h4 class="fw-bold mb-0">SG<span class="text-primary">Finance</span></h4>
+                        <h4 class="fw-bold mb-0"><span class="text-primary">Finance</span></h4>
                         <small class="text-muted">Management System</small>
                     </div>
                     <button class="btn-close ms-auto d-lg-none" id="sidebarClose"></button>
